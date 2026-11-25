@@ -1,4 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 
 /* ===== GENERAL STYLING ===== */
 
@@ -15,6 +17,7 @@ body {
     color: #26304a;
     line-height: 1.8;
 }
+
 
 /* ===== NAVIGATION BAR ===== */
 
@@ -63,6 +66,30 @@ nav .logo::first-letter {
     transform: translateY(-2px);
 }
 
+
+/* ===== HAMBURGER MENU ===== */
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #d8a5ff;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
 /* ===== MODERN HERO HEADER ===== */
 
 header {
@@ -81,6 +108,7 @@ header {
     text-align: left;
 }
 
+
 /* Decorative background */
 
 header::before {
@@ -94,6 +122,7 @@ header::before {
     right: -100px;
     filter: blur(5px);
 }
+
 
 /* Wave effect */
 
@@ -115,6 +144,7 @@ header::after {
     position: relative;
     z-index: 2;
 }
+
 
 /* Portfolio Badge */
 
@@ -161,6 +191,7 @@ header p {
     letter-spacing: 0.3px;
 }
 
+
 /* Explore Button */
 
 .hero-btn {
@@ -180,6 +211,7 @@ header p {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(135, 55, 220, 0.55);
 }
+
 
 /* Hero Profile Image */
 
@@ -208,9 +240,7 @@ header p {
 }
 
 @keyframes floatImage {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
@@ -218,6 +248,7 @@ header p {
         transform: translateY(-12px);
     }
 }
+
 
 /* ===== SECTION DESIGN ===== */
 
@@ -385,6 +416,7 @@ tr:hover {
     text-decoration: underline;
 }
 
+
 /* ===== CONTACT SECTION ===== */
 
 #contact p {
@@ -401,6 +433,7 @@ tr:hover {
     padding-left: 25px;
 }
 
+
 /* ===== FOOTER ===== */
 
 footer {
@@ -416,6 +449,7 @@ footer p {
     color: #d8d4e8;
     margin: 5px;
 }
+
 
 /* ===== TABLET RESPONSIVE ===== */
 
@@ -448,25 +482,52 @@ footer p {
     }
 }
 
+
 /* ===== MOBILE RESPONSIVE ===== */
 
 @media (max-width: 768px) {
 
+    /* Hamburger Navbar */
+
     nav {
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 15px 20px;
     }
 
     nav .logo {
         font-size: 21px;
     }
 
-    .nav-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px 18px;
+    .hamburger {
+        display: flex;
     }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #111329;
+        padding: 20px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Hero Section */
 
     header {
         min-height: auto;
@@ -524,6 +585,7 @@ footer p {
     }
 }
 
+
 /* ===== SMALL MOBILE SCREENS ===== */
 
 @media (max-width: 480px) {
@@ -551,11 +613,11 @@ footer p {
     }
 
     .nav-links {
-        gap: 8px 13px;
+        gap: 8px;
     }
 
     .nav-links a {
-        font-size: 11px;
+        font-size: 13px;
     }
 
     section {
@@ -569,4 +631,5 @@ footer p {
     table {
         min-width: 450px;
     }
+
 }
